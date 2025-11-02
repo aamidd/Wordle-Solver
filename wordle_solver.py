@@ -34,20 +34,21 @@ def remove(conditions):
         words = [word for word in words if not pattern.search(word)]
 
 
-while True:
-    usr_input = input("> ")
-    if usr_input == "quit":
-        break
-    elif usr_input == "print":
-        for word in words:
-            print(word)
-    elif usr_input == "hint":
-        print(hint())
-    elif "add" in usr_input:
-        add(usr_input)
-    elif "remove" in usr_input:
-        remove(usr_input)
-    elif usr_input == "reset":
-        words = backup
-    else:
-        print(f"{usr_input.split()[0]}: not a command")
+if __name__ == "__main__":
+    while True:
+        usr_input = input("> ")
+        if usr_input == "quit":
+            break
+        elif usr_input == "print":
+            for word in words:
+                print(word)
+        elif usr_input == "hint":
+            print(hint())
+        elif "add" in usr_input:
+            add(usr_input)
+        elif "remove" in usr_input:
+            remove(usr_input)
+        elif usr_input == "reset":
+            words = backup
+        else:   
+            print(f"{usr_input.split()[0]}: not a command")
