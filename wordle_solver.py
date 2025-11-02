@@ -11,6 +11,7 @@ backup = words
 def hint():
     return random.choice(words)
 
+
 # add conditions to filter the words
 def add(conditions):
     global words
@@ -21,6 +22,7 @@ def add(conditions):
     for condition in conditions:
         pattern = re.compile(condition)
         words = [word for word in words if pattern.search(word)]
+
 
 # remove the words with these conditions
 def remove(conditions):
@@ -50,5 +52,5 @@ if __name__ == "__main__":
             remove(usr_input)
         elif usr_input == "reset":
             words = backup
-        else:   
+        else:
             print(f"{usr_input.split()[0]}: not a command")
