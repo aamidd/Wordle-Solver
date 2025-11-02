@@ -11,7 +11,7 @@ backup = words
 def hint():
     return random.choice(words)
 
-
+# add conditions to filter the words
 def add(conditions):
     global words
     if len(conditions.split()) == 1:
@@ -22,7 +22,7 @@ def add(conditions):
         pattern = re.compile(condition)
         words = [word for word in words if pattern.search(word)]
 
-
+# remove the words with these conditions
 def remove(conditions):
     global words
     if len(conditions.split()) == 1:
